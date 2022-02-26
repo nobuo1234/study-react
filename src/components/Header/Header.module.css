@@ -1,0 +1,11 @@
+.header {
+	border-top: 1px solid #eaeaea;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.anchor {
+	display: inline-block;
+	padding: 4px 12px;
+}
