@@ -32,7 +32,7 @@ export const Posts = () => {
 	const getPosts = useCallback(async () => {
 		try {
 			const res = await fetch(
-				"https://jsonplaceholder.typicode.com/postsde"
+				"https://jsonplaceholder.typicode.com/posts"
 			);
 			if (!res.ok) {
 				throw new Error(
