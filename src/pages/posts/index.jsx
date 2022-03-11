@@ -1,8 +1,8 @@
 import styles from "src/styles/Home.module.css";
 import { Header } from "src/components/Header";
-import { Posts } from "src/components/Posts";
+import { Posts as PostsCompornent } from "src/components/Posts";
 
-const Home = () => {
+const Posts = () => {
 	return (
 		<div className={styles.container}>
 			<Header />
@@ -12,4 +12,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Posts;
