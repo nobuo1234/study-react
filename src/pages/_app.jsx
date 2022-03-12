@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>
-				<link rel="stylesheet" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<SWRConfig value={fetcher}>
 				<Layout>
