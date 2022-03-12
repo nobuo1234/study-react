@@ -14,63 +14,18 @@ export const User = () => {
 	}
 	return (
 		<div>
-			<h1>Name：{user?.name}</h1>
-			<h2>ユーザーの詳細</h2>
-			<p>ID：{user?.id}</p>
-			<p>UserName：{user?.username}</p>
-			<table>
-				<tr>
-					<caption>address</caption>
-				</tr>
-				<tr>
-					<th>street</th>
-					<td>{user?.address.street}</td>
-				</tr>
-				<tr>
-					<th>suite</th>
-					<td>{user?.address.suite}</td>
-				</tr>
-				<tr>
-					<th>city</th>
-					<td>{user?.address.city}</td>
-				</tr>
-				<tr>
-					<th>zipcode</th>
-					<td>{user?.address.zipcode}</td>
-				</tr>
-				<tr>
-					<caption>geo</caption>
-					<tr>
-						<th>lat</th>
-						<td>{user?.address.geo.lat}</td>
-					</tr>
-					<tr>
-						<th>lng</th>
-						<td>{user?.address.geo.lng}</td>
-					</tr>
-				</tr>
-			</table>
-			<p>phone：{user?.phone}</p>
-			<p>website：{user?.website}</p>
-			<table>
-				<tr>
-					<caption>company</caption>
-					<tr>
-						<th>name</th>
-						<td>{user?.company.name}</td>
-					</tr>
-					<tr>
-						<th>catchPhrase</th>
-						<td>{user?.company.catchPhrase}</td>
-					</tr>
-					<tr>
-						<th>bs</th>
-						<td>{user?.company.bs}</td>
-					</tr>
-				</tr>
-			</table>
-			<p>{user?.name ? <div>Created by {user?.name}</div> : null}</p>
-			<h2>投稿</h2>
+			<h1 className="font-bold text-3xl">{user?.name}</h1>
+			<h2 className="text-xl font-bold mt-10">ユーザーの詳細</h2>
+			<ul className="list-inside list-disc mt-2 text-lg">
+				<li>メール：{user?.email}</li>
+				<li>アカウント名：{user?.username}</li>
+				<li>住所：{user?.address.city}</li>
+				<li>電話番号：{user?.phone}</li>
+				<li>Webサイト{user?.website}</li>
+				<li>勤務先：{user?.company.name}</li>
+			</ul>
+			<h2 className="text-xl font-bold mt-10">投稿</h2>
+			<div className="mt-2"></div>
 			<PostsByUserId id={user.id} />
 		</div>
 	);

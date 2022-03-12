@@ -17,19 +17,24 @@ export const Users = () => {
 	}
 
 	return (
-		<ol>
+		<ul className="grid grid-cols-2 gap-4">
 			{data.map((user) => {
 				return (
 					<li key={user.id}>
 						<Link href={`/users/${user.id}`}>
-							<a>
-								{user.name}({user.email})
+							<a className="block truncate p-2 shadow rounded hover:bg-gray-100">
+								<h1 className="font-bold text-xl truncate">
+									{user.name}
+								</h1>
+								<div className="text-lg truncate">
+									{user.email}
+								</div>
 							</a>
 						</Link>
 					</li>
 				);
 			})}
-		</ol>
+		</ul>
 	);
 };
 
