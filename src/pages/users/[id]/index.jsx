@@ -1,16 +1,30 @@
 import { Header } from "src/components/Header";
 import User from "src/components/User";
-import { useUser } from "src/hooks/useUser";
+import { SWRConfig } from "swr";
 
-const UsersId = () => {
-	const { post, error, isLoading } = useUser();
-	console.log({ post, error, isLoading });
+export const getServerSideProps = async (ctx) => {
+	const { id } = ctx.query;
+	const API_URL = `https://jsonplaceholder.typicode.com/users/${id}`;
+	const user = await fetch(API_URL);
+	const userData = await user.json();
+
+	return {
+		props: {
+			fallback: {
+				[API_URL]: userData,
+			},
+		},
+	};
+};
+
+const UsersId = (props) => {
+	const { fallback } = props;
 
 	return (
-		<div>
+		<SWRConfig value={{ fallback }}>
 			<Header />
 			<User />
-		</div>
+		</SWRConfig>
 	);
 };
 
