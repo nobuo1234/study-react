@@ -72,7 +72,6 @@ export const User = () => {
 			<p>{user?.name ? <div>Created by {user?.name}</div> : null}</p>
 			<h2>投稿</h2>
 			<PostsByUserId id={user.id} />
-			<h2>コメント</h2>
 		</div>
 	);
 };
